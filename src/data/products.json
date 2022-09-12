@@ -1,0 +1,246 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "image": "./assets/images/adidasOriginalsContinental.jpg",
+            "price": 6200,
+            "year": 2016, 
+            "model": "Originals Continental",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 1,
+            "image": "./assets/images/adidasOriginalsStanSmith.jpg",
+            "price": 6200,
+            "year": 2017, 
+            "model": "Originals Stan Smith",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 2,
+            "image": "./assets/images/adidasOriginalsNMD_R1.jpg",
+            "price": 8270,
+            "year": 2016, 
+            "model": "Originals NMD_R1",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "текстиль"
+        },
+        {
+            "id": 3,
+            "image": "./assets/images/adidasOriginalsHandballSpezial.jpg",
+            "price": 8390,
+            "year": 2016, 
+            "model": "Originals Handball",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "текстиль"
+        },
+        {
+            "id": 4,
+            "image": "./assets/images/adidasOriginalsForumTechBoost.jpg",
+            "price": 11260,
+            "year": 2017, 
+            "model": "Originals Forum Tech",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 5,
+            "image": "./assets/images/adidasOriginalsOzweegoCelox.jpg",
+            "price": 13490,
+            "year": 2020, 
+            "model": "Originals Ozweego Celox",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 6,
+            "image": "./assets/images/adidasOriginalsBusenitzVulcII.jpg",
+            "price": 11490,
+            "year": 2019, 
+            "model": "Originals Busenitz Vulc II",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "мужской",
+            "material": "замша"
+        },
+        {
+            "id": 7,
+            "image": "./assets/images/adidasOriginalsOzelia.jfif",
+            "price": 10490,
+            "year": 2021, 
+            "model": "Originals Ozelia",
+            "brand": "adidas",
+            "color": "серый",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 8,
+            "image": "./assets/images/adidasOriginalsBusenitz.jpg",
+            "price": 10490,
+            "year": 2020, 
+            "model": "Originals Busenitz",
+            "brand": "adidas",
+            "color": "серый",
+            "gender": "мужской",
+            "material": "замша"
+        },
+        {
+            "id": 9,
+            "image": "./assets/images/adidasOriginalsForemBonega.jpg",
+            "price": 7790,
+            "year": 2022, 
+            "model": "Originals Forem Bonega",
+            "brand": "фdidas",
+            "color": "белый",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 10,
+            "image": "./assets/images/adidasOriginalsRuby910.jpg",
+            "price": 14990,
+            "year": 2021, 
+            "model": "Originals Ruby910",
+            "brand": "adidas",
+            "color": "белый",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 11,
+            "image": "./assets/images/adidasOriginalsZX2KBoost.jpg",
+            "price": 14990,
+            "year": 2020, 
+            "model": "Originals ZX 2k Boost",
+            "brand": "фdidas",
+            "color": "белый",
+            "gender": "мужской",
+            "material": "кожа"
+        },
+        {
+            "id": 12,
+            "image": "./assets/images/adidasOriginalsMatchbreak.jpg",
+            "price": 8490,
+            "year": 2018, 
+            "model": "Originals Matchbreak",
+            "brand": "adidas",
+            "color": "красный",
+            "gender": "мужской",
+            "material": "замша"
+        },
+        {
+            "id": 13,
+            "image": "./assets/images/adidasOriginalsSuperstarW.jpg",
+            "price": 4950,
+            "year": 2017, 
+            "model": "Originals Superstar W",
+            "brand": "adidas",
+            "color": "красный",
+            "gender": "женский",
+            "material": "кожа"
+        },
+        {
+            "id": 14,
+            "image": "./assets/images/adidasOriginalsStanSmithW.jpg",
+            "price": 4950,
+            "year": 2018, 
+            "model": "Originals Stan Smith W",
+            "brand": "adidas",
+            "color": "красный",
+            "gender": "женский",
+            "material": "кожа"
+        },
+        {
+            "id": 15,
+            "image": "./assets/images/adidasOriginalsNiteJoggerW.jpg",
+            "price": 9690,
+            "year": 2018, 
+            "model": "Originals Nite Jogger W",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "женский",
+            "material": "текстиль"
+        },
+        {
+            "id": 16,
+            "image": "./assets/images/adidasOriginalsOzweegoW.jpg",
+            "price": 12190,
+            "year": 2021, 
+            "model": "Originals Ozweego W",
+            "brand": "adidas",
+            "color": "женский",
+            "gender": "мужской",
+            "material": "текстиль"
+        },
+        {
+            "id": 17,
+            "image": "./assets/images/adidasOriginalsOzrahW.jpg",
+            "price": 16990,
+            "year": 2022, 
+            "model": "Originals Ozrah W",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "женский",
+            "material": "замша"
+        },
+        {
+            "id": 18,
+            "image": "./assets/images/adidasOriginalsAstirW.jpg",
+            "price": 11990,
+            "year": 2022, 
+            "model": "Originals Astir W",
+            "brand": "adidas",
+            "color": "черный",
+            "gender": "женский",
+            "material": "текстиль"
+        },
+        {
+            "id": 19,
+            "image": "./assets/images/adidasOriginalsOzweegoMetaW.jpg",
+            "price": 14990,
+            "year": 2021, 
+            "model": "Originals Ozweego Meta",
+            "brand": "adidas",
+            "color": "коричнеый",
+            "gender": "женский",
+            "material": "текстиль"
+        },
+        {
+            "id": 20,
+            "image": "./assets/images/adidasOriginalsSuperstar82.jpg",
+            "price": 13190,
+            "year": 2019, 
+            "model": "Originals Superstar 82",
+            "brand": "adidas",
+            "color": "синий",
+            "gender": "мужской",
+            "material": "текстиль"
+        },
+        {
+            "id": 21,
+            "image": "./assets/images/adidasOriginalsMatchbreakSuper.jpg",
+            "price": 8490,
+            "year": 2020, 
+            "model": "Originals Matchbreak",
+            "brand": "adidas",
+            "color": "зеленый",
+            "gender": "мужской",
+            "material": "замша"
+        }
+    ]
+}
