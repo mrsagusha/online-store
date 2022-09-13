@@ -476,6 +476,14 @@ label {
   align-content: flex-start;
 }
 
+.empty-message {
+  position: absolute;
+  left: 40vw;
+  text-align: center;
+  font-family: "Open Sans-Regular", sans-serif;
+  font-size: 2vw;
+}
+
 .item-card {
   width: 14.41vw;
   height: 18vw;
