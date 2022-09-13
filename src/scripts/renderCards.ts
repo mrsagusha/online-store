@@ -4,10 +4,32 @@ import IProduct from '../interfaces/interfaces';
 
 const itemSection = document.querySelector('.main__main-section__items');
 
-function render(productsList: IProduct[], searchString: string): void {
+function render(productsList: IProduct[], searchString: string, sortString: string): void {
   const productsListToRender: IProduct[] = productsList.filter((el:IProduct) => {
     return el.model.toLowerCase().includes(searchString.toLowerCase().trim());
   });
+
+  if (sortString === 'Цена по убыванию') productsListToRender.sort((a, b) => b.price - a.price);
+  else if (sortString === 'Цена по возрастанию') productsListToRender.sort((a, b) => a.price - b.price);
+  else if (sortString === 'Год по возрастанию') productsListToRender.sort((a, b) => a.year - b.year);
+  else if (sortString === 'Год по убыванию') productsListToRender.sort((a, b) => b.year - a.year);
+  else if (sortString === 'Название по убыванию') {
+    productsListToRender.sort((a, b) => {
+      const nameA = a.model.toLowerCase();
+      const nameB = b.model.toLowerCase();
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 0;
+      return 0;
+    });
+  } else if (sortString === 'Название по возрастанию') {
+    productsListToRender.sort((a, b) => {
+      const nameA = a.model.toLowerCase();
+      const nameB = b.model.toLowerCase();
+      if (nameA > nameB) return -1;
+      if (nameA < nameB) return 0;
+      return 0;
+    });
+  }
 
   productsListToRender.forEach((el) => {
     const itemCardHTML = `<div class="item-card">

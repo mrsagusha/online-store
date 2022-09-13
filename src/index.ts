@@ -1,6 +1,7 @@
 import './css/style.css';
 import products from './data/products.json';
 import render from './scripts/renderCards';
+import setSort from './scripts/sorting';
 
 const itemSection = document.querySelector('.main__main-section__items');
 const search: HTMLInputElement = document.querySelector('.search-text');
@@ -19,11 +20,13 @@ window.addEventListener('load', (): void => {
     search.value = window.localStorage.getItem('search');
   }
 
-  render(products.products, search.value);
+  render(products.products, search.value, window.localStorage.getItem('sort'));
 });
 
 search.addEventListener('input', (): void => {
   itemSection.innerHTML = '';
-  render(products.products, search.value);
+  render(products.products, search.value, window.localStorage.getItem('sort'));
   if (itemSection.innerHTML === '') itemSection.innerHTML = emptyMessageHTML;
 });
+
+setSort();
