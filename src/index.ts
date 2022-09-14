@@ -2,6 +2,7 @@ import './css/style.css';
 import products from './data/products.json';
 import render from './scripts/renderCards';
 import setSort from './scripts/sorting';
+import changeSliderFiltersValues from './scripts/changeSliderFiltersValues';
 
 const itemSection = document.querySelector('.main__main-section__items');
 const search: HTMLInputElement = document.querySelector('.search-text');
@@ -30,3 +31,4 @@ search.addEventListener('input', (): void => {
 });
 
 setSort();
+changeSliderFiltersValues();
