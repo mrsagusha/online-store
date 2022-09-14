@@ -1,20 +1,22 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
 
-import IProduct from '../interfaces/interfaces';
+import { IProduct, IFilters } from '../interfaces/interfaces';
 
 const itemSection = document.querySelector('.main__main-section__items');
 
-function render(productsList: IProduct[], searchString: string, sortString: string): void {
-  const productsListToRender: IProduct[] = productsList.filter((el:IProduct) => {
+function render(productsList: IProduct[], searchString: string, sortString: string, filters: IFilters): void {
+  const productsListAfterSearching: IProduct[] = productsList.filter((el:IProduct) => {
     return el.model.toLowerCase().includes(searchString.toLowerCase().trim());
   });
 
-  if (sortString === 'Цена по убыванию') productsListToRender.sort((a, b) => b.price - a.price);
-  else if (sortString === 'Цена по возрастанию') productsListToRender.sort((a, b) => a.price - b.price);
-  else if (sortString === 'Год по возрастанию') productsListToRender.sort((a, b) => a.year - b.year);
-  else if (sortString === 'Год по убыванию') productsListToRender.sort((a, b) => b.year - a.year);
+  if (sortString === 'Цена по убыванию') productsListAfterSearching.sort((a, b) => b.price - a.price);
+  else if (sortString === 'Цена по возрастанию') productsListAfterSearching.sort((a, b) => a.price - b.price);
+  else if (sortString === 'Год по возрастанию') productsListAfterSearching.sort((a, b) => a.year - b.year);
+  else if (sortString === 'Год по убыванию') productsListAfterSearching.sort((a, b) => b.year - a.year);
   else if (sortString === 'Название по убыванию') {
-    productsListToRender.sort((a, b) => {
+    productsListAfterSearching.sort((a, b) => {
       const nameA = a.model.toLowerCase();
       const nameB = b.model.toLowerCase();
       if (nameA < nameB) return -1;
@@ -22,7 +24,7 @@ function render(productsList: IProduct[], searchString: string, sortString: stri
       return 0;
     });
   } else if (sortString === 'Название по возрастанию') {
-    productsListToRender.sort((a, b) => {
+    productsListAfterSearching.sort((a, b) => {
       const nameA = a.model.toLowerCase();
       const nameB = b.model.toLowerCase();
       if (nameA > nameB) return -1;
@@ -30,6 +32,11 @@ function render(productsList: IProduct[], searchString: string, sortString: stri
       return 0;
     });
   }
+
+  const productsListToRender = productsListAfterSearching.filter((el: IProduct) => {
+    return el.price >= filters.price
+    && el.year >= filters.year;
+  });
 
   productsListToRender.forEach((el) => {
     const itemCardHTML = `<div class="item-card">

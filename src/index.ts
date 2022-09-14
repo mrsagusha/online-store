@@ -3,6 +3,7 @@ import products from './data/products.json';
 import render from './scripts/renderCards';
 import setSort from './scripts/sorting';
 import changeSliderFiltersValues from './scripts/changeSliderFiltersValues';
+import setFilters from './scripts/filtering';
 
 const itemSection = document.querySelector('.main__main-section__items');
 const search: HTMLInputElement = document.querySelector('.search-text');
@@ -21,14 +22,15 @@ window.addEventListener('load', (): void => {
     search.value = window.localStorage.getItem('search');
   }
 
-  render(products.products, search.value, window.localStorage.getItem('sort'));
+  render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
 });
 
 search.addEventListener('input', (): void => {
   itemSection.innerHTML = '';
-  render(products.products, search.value, window.localStorage.getItem('sort'));
+  render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
   if (itemSection.innerHTML === '') itemSection.innerHTML = emptyMessageHTML;
 });
 
 setSort();
 changeSliderFiltersValues();
+setFilters();

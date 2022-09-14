@@ -21,7 +21,7 @@ function setListenerToButton(btn: Element): void {
     else if (btn === sortingButtonNameUp) sort = 'Название по убыванию';
 
     itemSection.innerHTML = '';
-    render(products.products, search.value, sort);
+    render(products.products, search.value, sort, JSON.parse(localStorage.getItem('filters')));
     window.localStorage.setItem('sort', sort);
   });
 }

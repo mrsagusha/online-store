@@ -1,6 +1,6 @@
 /* eslint-disable semi */
 /* eslint-disable no-extra-semi */
-export default interface IProduct {
+interface IProduct {
     id: number;
     image: string;
     price: number;
@@ -11,3 +11,14 @@ export default interface IProduct {
     gender: string;
     material: string;
 };
+
+interface IFilters {
+    price: number;
+    year: number;
+    brand: string [];
+    color: string [];
+    gender: string [];
+    material: string [];
+};
+
+export { IProduct, IFilters };
