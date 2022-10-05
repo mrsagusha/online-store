@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
@@ -26,59 +27,18 @@ const filters: IFilters = {
   material: [],
 };
 
-const {
-  price, year, brand, color, gender, material,
-} = filters;
-
-function setListenerToButtonFilter(listOfButtons: NodeListOf<Element>, filter: string []) {
-  listOfButtons.forEach((el): void => {
-    el.addEventListener('click', (): void => {
-      if (!filter.includes(el.nextElementSibling.innerHTML.toLowerCase())) {
-        filter.push(el.nextElementSibling.innerHTML.toLowerCase());
-      } else {
-        if (filter === gender) {
-          filters.gender = filter.filter((elem: string) => {
-            return elem !== el.nextElementSibling.innerHTML.toLowerCase();
-          });
-        } else if (filter === material) {
-          filters.material = filter.filter((elem: string) => {
-            return elem !== el.nextElementSibling.innerHTML.toLowerCase();
-          });
-        } else if (filter === brand) {
-          filters.material = filter.filter((elem: string) => {
-            return elem !== el.nextElementSibling.innerHTML.toLowerCase();
-          });
-        }
-      }
+function setInputFilter(filter: HTMLInputElement) {
+  if (filter) {
+    filter.addEventListener('input', (): void => {
+      filters.price = +filter.value;
       window.localStorage.setItem('filters', JSON.stringify(filters));
       itemSection.innerHTML = '';
       render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
     });
-  });
+  }
 }
 
 function setFilters(): void {
-  if (priceFilter) {
-    priceFilter.addEventListener('input', (): void => {
-      filters.price = +priceFilter.value;
-      window.localStorage.setItem('filters', JSON.stringify(filters));
-      itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
-    });
-  }
-  if (yearFilter) {
-    yearFilter.addEventListener('input', (): void => {
-      filters.year = +yearFilter.value;
-      window.localStorage.setItem('filters', JSON.stringify(filters));
-      itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
-    });
-  }
-
-  setListenerToButtonFilter(genderFilters, gender);
-  setListenerToButtonFilter(materialFilter, material);
-  setListenerToButtonFilter(brandFilters, brand);
-
   colorFilters.forEach((el): void => {
     el.addEventListener('click', (): void => {
       if (!filters.color.includes(el.previousElementSibling.innerHTML.toLowerCase())) {
@@ -93,6 +53,9 @@ function setFilters(): void {
       render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
     });
   });
+
+  setInputFilter(priceFilter);
+  setInputFilter(yearFilter);
 }
 
-export default setFilters;
+export { setFilters, filters };

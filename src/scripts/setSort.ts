@@ -1,4 +1,4 @@
-import render from '../scripts/renderCards';
+import render from './renderCards';
 import products from '../data/products.json';
 
 const sortingButtonPriceUp = document.querySelector('.button-price-up');

@@ -35,7 +35,8 @@ function render(productsList: IProduct[], searchString: string, sortString: stri
 
   const productsListToRender = productsListAfterSearching.filter((el: IProduct) => {
     return el.price >= filters.price
-    && el.year >= filters.year;
+    && el.year >= filters.year
+    && filters.color.includes(el.color);
   });
 
   productsListToRender.forEach((el) => {
