@@ -1,5 +1,6 @@
 import render from './renderCards';
 import products from '../data/products.json';
+import { filters } from '../scripts/setFilters';
 
 const sortingButtonPriceUp = document.querySelector('.button-price-up');
 const sortingButtonPriceDown = document.querySelector('.button-price-down');
@@ -21,7 +22,7 @@ function setListenerToButton(btn: Element): void {
     else if (btn === sortingButtonNameUp) sort = 'Название по убыванию';
 
     itemSection.innerHTML = '';
-    render(products.products, search.value, sort, JSON.parse(localStorage.getItem('filters')));
+    render(products.products, search.value, sort, filters);
     window.localStorage.setItem('sort', sort);
   });
 }

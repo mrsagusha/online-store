@@ -14,7 +14,7 @@ const search: HTMLInputElement = document.querySelector('.search-text');
 const priceFilter: HTMLInputElement | null = document.querySelector('.filter-price__slider');
 const yearFilter: HTMLInputElement | null = document.querySelector('.filter-year-of-release__slider');
 const genderFilters = document.querySelectorAll('.gender-checkbox');
-const materialFilter = document.querySelectorAll('.material-checkbox');
+const materialFilters = document.querySelectorAll('.material-checkbox');
 const brandFilters = document.querySelectorAll('.brand-checkbox');
 const colorFilters = document.querySelectorAll('.filter-color__checkbox');
 
@@ -30,15 +30,31 @@ const filters: IFilters = {
 function setInputFilter(filter: HTMLInputElement) {
   if (filter) {
     filter.addEventListener('input', (): void => {
-      filters.price = +filter.value;
-      window.localStorage.setItem('filters', JSON.stringify(filters));
+      if (filter === priceFilter) {
+        filters.price = +filter.value;
+      } else {
+        filters.year = +filter.value;
+      }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
+      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
     });
   }
 }
 
 function setFilters(): void {
+  brandFilters.forEach((el): void => {
+    el.addEventListener('click', (): void => {
+      if (!filters.brand.includes(el.nextElementSibling.innerHTML.toLowerCase())) {
+        filters.brand.push(el.nextElementSibling.innerHTML.toLowerCase());
+      } else {
+        filters.brand = filters.brand.filter((elem: string) => {
+          return elem !== el.nextElementSibling.innerHTML.toLowerCase();
+        });
+      }
+      itemSection.innerHTML = '';
+      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+    });
+  });
   colorFilters.forEach((el): void => {
     el.addEventListener('click', (): void => {
       if (!filters.color.includes(el.previousElementSibling.innerHTML.toLowerCase())) {
@@ -48,9 +64,34 @@ function setFilters(): void {
           return elem !== el.previousElementSibling.innerHTML.toLowerCase();
         });
       }
-      window.localStorage.setItem('filters', JSON.stringify(filters));
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(localStorage.getItem('filters')));
+      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+    });
+  });
+  genderFilters.forEach((el): void => {
+    el.addEventListener('click', (): void => {
+      if (!filters.gender.includes(el.nextElementSibling.innerHTML.toLowerCase())) {
+        filters.gender.push(el.nextElementSibling.innerHTML.toLowerCase());
+      } else {
+        filters.gender = filters.gender.filter((elem: string) => {
+          return elem !== el.nextElementSibling.innerHTML.toLowerCase();
+        });
+      }
+      itemSection.innerHTML = '';
+      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+    });
+  });
+  materialFilters.forEach((el): void => {
+    el.addEventListener('click', (): void => {
+      if (!filters.material.includes(el.nextElementSibling.innerHTML.toLowerCase())) {
+        filters.material.push(el.nextElementSibling.innerHTML.toLowerCase());
+      } else {
+        filters.material = filters.material.filter((elem: string) => {
+          return elem !== el.nextElementSibling.innerHTML.toLowerCase();
+        });
+      }
+      itemSection.innerHTML = '';
+      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
     });
   });
 
