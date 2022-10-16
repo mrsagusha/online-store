@@ -1,4 +1,3 @@
-/* eslint-disable semi */
 /* eslint-disable no-extra-semi */
 interface IProduct {
     id: number;
@@ -20,5 +19,4 @@ interface IFilters {
     gender: string [];
     material: string [];
 };
-
 export { IProduct, IFilters };
