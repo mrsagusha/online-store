@@ -8,6 +8,7 @@ import { addRemoveItemCart, selectedItems } from './scripts/addRemoveItemCart';
 import {
   setFilters, filters,
 } from './scripts/setFilters';
+import setSelected from './scripts/setSelected';
 
 const itemSection = document.querySelector('.main__main-section__items');
 const search: HTMLInputElement = document.querySelector('.search-text');
@@ -38,6 +39,7 @@ window.addEventListener('load', (): void => {
   yearFilter.value = JSON.parse(window.localStorage.getItem('filters')).year;
   render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
   addRemoveItemCart();
+  setSelected();
 });
 
 search.addEventListener('input', (): void => {
