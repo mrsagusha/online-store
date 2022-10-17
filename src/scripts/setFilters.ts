@@ -1,7 +1,5 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable max-len */
-/* eslint-disable no-lonely-if */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable arrow-body-style */
 
@@ -36,7 +34,8 @@ function setInputFilter(filter: HTMLInputElement) {
         filters.year = +filter.value;
       }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+      window.localStorage.setItem('filters', JSON.stringify(filters));
+      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
     });
   }
 }
@@ -52,7 +51,8 @@ function setFilters(): void {
         });
       }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+      window.localStorage.setItem('filters', JSON.stringify(filters));
+      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
     });
   });
   colorFilters.forEach((el): void => {
@@ -65,7 +65,8 @@ function setFilters(): void {
         });
       }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+      window.localStorage.setItem('filters', JSON.stringify(filters));
+      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
     });
   });
   genderFilters.forEach((el): void => {
@@ -78,7 +79,8 @@ function setFilters(): void {
         });
       }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+      window.localStorage.setItem('filters', JSON.stringify(filters));
+      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
     });
   });
   materialFilters.forEach((el): void => {
@@ -91,7 +93,8 @@ function setFilters(): void {
         });
       }
       itemSection.innerHTML = '';
-      render(products.products, search.value, window.localStorage.getItem('sort'), filters);
+      window.localStorage.setItem('filters', JSON.stringify(filters));
+      render(products.products, search.value, window.localStorage.getItem('sort'), JSON.parse(window.localStorage.getItem('filters')));
     });
   });
 
@@ -99,4 +102,6 @@ function setFilters(): void {
   setInputFilter(yearFilter);
 }
 
-export { setFilters, filters };
+export {
+  setFilters, filters,
+};

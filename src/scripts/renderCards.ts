@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-expressions */
 /* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
 
@@ -44,6 +42,9 @@ function render(productsList: IProduct[], searchString: string, sortString: stri
   if (filters.gender.length !== 0) productsToRender = productsToRender.filter((el: IProduct) => filters.gender.includes(el.gender));
   if (filters.material.length !== 0) productsToRender = productsToRender.filter((el: IProduct) => filters.material.includes(el.material));
 
+  if (productsToRender.length === 0) {
+    itemSection.innerHTML = '<p class="empty-message">Извините, товар не найден...</p>';
+  }
   productsToRender.forEach((el) => {
     const itemCardHTML = `<div class="item-card">
       <div class="item-card__cart-section">
