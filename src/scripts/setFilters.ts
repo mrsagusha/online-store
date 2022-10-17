@@ -6,6 +6,7 @@
 import { IFilters } from '../interfaces/interfaces';
 import render from './renderCards';
 import products from '../data/products.json';
+import getFiltersFromLocalStorage from './getFiltersFromLocalStorage';
 
 const itemSection = document.querySelector('.main__main-section__items');
 const search: HTMLInputElement = document.querySelector('.search-text');
@@ -26,6 +27,7 @@ const filters: IFilters = {
 };
 
 function setInputFilter(filter: HTMLInputElement) {
+  getFiltersFromLocalStorage();
   if (filter) {
     filter.addEventListener('input', (): void => {
       if (filter === priceFilter) {

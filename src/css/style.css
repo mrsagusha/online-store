@@ -500,6 +500,10 @@ label {
   margin-top: -2.5vw;
 }
 
+.item-card:hover .item-card__image {
+  transform: scale(1.1);
+}
+
 .item-card__cart-section {
   display: none;
   position: absolute;
@@ -550,6 +554,7 @@ label {
 
 .item-card__image {
   width: 100%;
+  transition: .4s;
 }
 
 .item-card__button-add-to-cart {
