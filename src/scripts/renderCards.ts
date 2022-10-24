@@ -52,7 +52,9 @@ function render(productsList: IProduct[], searchString: string, sortString: stri
                                   <p class="item-card__cart-section__delete-item">-</p>
                                   <p class="item-card__cart-section__quantity"><b class="item-card__cart-section__number">0</b> шт.</p>
                               </div>
+      <div class="item-card__image-wrapper">
       <img class="item-card__image" src="${el.image}" alt="">
+      </div>
       <div class="item-card__button-add-to-cart">
           <p class="item-card__button-add-to-cart__text">Добавить в корзину</p>
       </div>

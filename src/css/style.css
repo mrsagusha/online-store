@@ -500,6 +500,10 @@ label {
   margin-top: -2.5vw;
 }
 
+.item-card__image-wrapper {
+  overflow: hidden;
+}
+
 .item-card:hover .item-card__image {
   transform: scale(1.1);
 }
